@@ -89,13 +89,13 @@ if [ ${#build_targets[@]} -eq 0 ]; then
 fi
 
 # get git rev
-rev=$(git describe --tags --dirty)
+rev=$(date +%H%M)
 
 for device in "${build_targets[@]}"; do
 	if [ "$debug_mode" = true ]; then
-		filename="coreboot_edk2-${device}-mrchromebox_debug_$(date +"%Y%m%d").rom"
+		filename="coreboot_edk2-${device}-flutterbox_debug_$(date +"%Y%m%d").rom"
 	else
-		filename="coreboot_edk2-${device}-mrchromebox_$(date +"%Y%m%d").rom"
+		filename="coreboot_edk2-${device}-flutterbox_$(date +"%Y%m%d").rom"
 	fi
 	rm -f "${output_folder}/${filename}"*
 	rm -rf ./build
